@@ -37,7 +37,7 @@ final class TabBarController: UITabBarController {
         var viewController: UIViewController {
             switch self {
             case .jinjae:
-              return UIViewController()
+              return JinJaeViewController()
             case .junbeom:
                 return UIViewController()
             case .seungjun:

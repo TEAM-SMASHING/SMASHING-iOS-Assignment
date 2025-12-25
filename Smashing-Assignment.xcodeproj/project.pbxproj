@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1ECDD5532EFDB564005A9325 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1ECDD5522EFDB564005A9325 /* SnapKit */; };
+		1ECDD5562EFDB56C005A9325 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1ECDD5552EFDB56C005A9325 /* Then */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		633612112EFBCE6100228B88 /* Smashing-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smashing-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ECDD5532EFDB564005A9325 /* SnapKit in Frameworks */,
+				1ECDD5562EFDB56C005A9325 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = "Smashing-Assignment";
 			packageProductDependencies = (
+				1ECDD5522EFDB564005A9325 /* SnapKit */,
+				1ECDD5552EFDB56C005A9325 /* Then */,
 			);
 			productName = "Smashing-Assignment";
 			productReference = 633612112EFBCE6100228B88 /* Smashing-Assignment.app */;
@@ -107,6 +116,10 @@
 			);
 			mainGroup = 633612082EFBCE6100228B88;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1ECDD5512EFDB564005A9325 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1ECDD5542EFDB56C005A9325 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 633612122EFBCE6100228B88 /* Products */;
 			projectDirPath = "";
@@ -152,6 +165,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -183,6 +197,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,6 +358,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1ECDD5512EFDB564005A9325 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		1ECDD5542EFDB56C005A9325 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1ECDD5522EFDB564005A9325 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1ECDD5512EFDB564005A9325 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1ECDD5552EFDB56C005A9325 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1ECDD5542EFDB56C005A9325 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 633612092EFBCE6100228B88 /* Project object */;
 }
