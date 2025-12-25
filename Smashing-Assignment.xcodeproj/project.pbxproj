@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F7E8A1442EFDB161000F71C1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F7E8A1432EFDB161000F71C1 /* Then */; };
+		F7E8A1472EFDB16D000F71C1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F7E8A1462EFDB16D000F71C1 /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		633612112EFBCE6100228B88 /* Smashing-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smashing-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7E8A1442EFDB161000F71C1 /* Then in Frameworks */,
+				F7E8A1472EFDB16D000F71C1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = "Smashing-Assignment";
 			packageProductDependencies = (
+				F7E8A1432EFDB161000F71C1 /* Then */,
+				F7E8A1462EFDB16D000F71C1 /* SnapKit */,
 			);
 			productName = "Smashing-Assignment";
 			productReference = 633612112EFBCE6100228B88 /* Smashing-Assignment.app */;
@@ -107,6 +116,10 @@
 			);
 			mainGroup = 633612082EFBCE6100228B88;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F7E8A1422EFDB161000F71C1 /* XCRemoteSwiftPackageReference "Then" */,
+				F7E8A1452EFDB16D000F71C1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 633612122EFBCE6100228B88 /* Products */;
 			projectDirPath = "";
@@ -145,13 +158,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2QJX795Q3R;
+				DEVELOPMENT_TEAM = DPYL43TPTX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Smashing-Assignment/Global/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -176,13 +190,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2QJX795Q3R;
+				DEVELOPMENT_TEAM = DPYL43TPTX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Smashing-Assignment/Global/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,6 +358,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F7E8A1422EFDB161000F71C1 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		F7E8A1452EFDB16D000F71C1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F7E8A1432EFDB161000F71C1 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7E8A1422EFDB161000F71C1 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		F7E8A1462EFDB16D000F71C1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7E8A1452EFDB16D000F71C1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 633612092EFBCE6100228B88 /* Project object */;
 }
