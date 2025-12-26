@@ -11,7 +11,7 @@ final class TabBarController: UITabBarController {
     
     //MARK: - Properties
     
-    private let defaultTab: Tab = .jinjae
+    private let defaultTab: Tab = .junbeom
     
     enum Tab: Int, CaseIterable {
         case jinjae = 0
@@ -39,7 +39,7 @@ final class TabBarController: UITabBarController {
             case .jinjae:
               return JinJaeViewController()
             case .junbeom:
-                return UIViewController()
+                return CombineViewController_HJB()
             case .seungjun:
                 return UIViewController()
             }
