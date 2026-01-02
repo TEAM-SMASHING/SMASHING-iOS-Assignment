@@ -39,7 +39,8 @@ final class TabBarController: UITabBarController {
             case .jinjae:
               return JinJaeViewController()
             case .junbeom:
-                return CombineViewController_HJB()
+                let HJBviewModel = CombineViewModel_HJB()
+                return CombineViewController_HJB(viewModel: HJBviewModel)
             case .seungjun:
                 return UIViewController()
             }

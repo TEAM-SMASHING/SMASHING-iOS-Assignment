@@ -18,8 +18,15 @@ final class CombineView_HJB: UIView {
         $0.addPadding()
     }
     
+    var secondCombineTextField = UITextField().then {
+        $0.placeholder = "Combine2"
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.gray.cgColor
+        $0.addPadding()
+    }
+    
     var infoText = UILabel().then {
-        $0.text = "5글자 이상 입력해주세요"
+        $0.text = "두개의 텍스트 박스에 모두 5글자 이상 입력 시 삭제 가능"
         $0.textAlignment = .center
     }
     
@@ -27,6 +34,7 @@ final class CombineView_HJB: UIView {
         $0.setTitle("Next", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.layer.cornerRadius = 8
+        $0.backgroundColor = .gray
     }
     
     override init(frame: CGRect) {
@@ -41,6 +49,7 @@ final class CombineView_HJB: UIView {
     
     private func setUI() {
         addSubview(combineTextField)
+        addSubview(secondCombineTextField)
         addSubview(infoText)
         addSubview(combineButton)
     }
@@ -53,9 +62,16 @@ final class CombineView_HJB: UIView {
             $0.leading.trailing.equalToSuperview().inset(40)
         }
         
-        infoText.snp.makeConstraints {
+        secondCombineTextField.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(combineTextField.snp.bottom).offset(20)
+            $0.height.equalTo(50)
+            $0.leading.trailing.equalToSuperview().inset(40)
+        }
+        
+        infoText.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(secondCombineTextField.snp.bottom).offset(20)
         }
         
         combineButton.snp.makeConstraints {
