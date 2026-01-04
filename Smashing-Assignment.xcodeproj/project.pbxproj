@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1ECDD5532EFDB564005A9325 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1ECDD5522EFDB564005A9325 /* SnapKit */; };
 		1ECDD5562EFDB56C005A9325 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1ECDD5552EFDB56C005A9325 /* Then */; };
-		637B44262F03AC26008C1F7C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 637B44252F03AC26008C1F7C /* Moya */; };
+		6396AB5C2F0A8BB000814F3A /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 6396AB5B2F0A8BB000814F3A /* CombineMoya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +44,7 @@
 			files = (
 				1ECDD5532EFDB564005A9325 /* SnapKit in Frameworks */,
 				1ECDD5562EFDB56C005A9325 /* Then in Frameworks */,
-				637B44262F03AC26008C1F7C /* Moya in Frameworks */,
+				6396AB5C2F0A8BB000814F3A /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 			packageProductDependencies = (
 				1ECDD5522EFDB564005A9325 /* SnapKit */,
 				1ECDD5552EFDB56C005A9325 /* Then */,
-				637B44252F03AC26008C1F7C /* Moya */,
+				6396AB5B2F0A8BB000814F3A /* CombineMoya */,
 			);
 			productName = "Smashing-Assignment";
 			productReference = 633612112EFBCE6100228B88 /* Smashing-Assignment.app */;
@@ -122,7 +122,7 @@
 			packageReferences = (
 				1ECDD5512EFDB564005A9325 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1ECDD5542EFDB56C005A9325 /* XCRemoteSwiftPackageReference "Then" */,
-				637B44242F03AC26008C1F7C /* XCRemoteSwiftPackageReference "Moya" */,
+				6396AB5A2F0A8BB000814F3A /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 633612122EFBCE6100228B88 /* Products */;
@@ -390,7 +390,7 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		637B44242F03AC26008C1F7C /* XCRemoteSwiftPackageReference "Moya" */ = {
+		6396AB5A2F0A8BB000814F3A /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
@@ -411,10 +411,10 @@
 			package = 1ECDD5542EFDB56C005A9325 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
-		637B44252F03AC26008C1F7C /* Moya */ = {
+		6396AB5B2F0A8BB000814F3A /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 637B44242F03AC26008C1F7C /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
+			package = 6396AB5A2F0A8BB000814F3A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
