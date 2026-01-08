@@ -11,7 +11,11 @@ final class TabBarController: UITabBarController {
     
     //MARK: - Properties
     
-    private let defaultTab: Tab = .jinjae
+    var factory: TabBarSceneFactory = DefaultTabBarSceneFactory()
+    
+    static weak var shared: TabBarController?
+    
+    private let defaultTab: Tab = .junbeom
     
     enum Tab: Int, CaseIterable {
         case jinjae = 0
@@ -51,6 +55,7 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        TabBarController.shared = self // 인스턴스 할당 필수!
         self.delegate = self
         
         setViewControllers()
@@ -58,25 +63,30 @@ final class TabBarController: UITabBarController {
         selectedIndex = defaultTab.rawValue
     }
     
+    // MARK: - Public Methods
+    
+    func switchToTab(_ tab: Tab) { // 외부에서 호출할 탭 전환 메서드
+        self.selectedIndex = tab.rawValue
+        // 필요한 경우 해당 탭의 내비게이션 스택을 루트로 초기화
+        if let nav = self.selectedViewController as? UINavigationController {
+            nav.popToRootViewController(animated: true)
+        }
+    }
+    
     //MARK: - Private Methods
     
     private func setViewControllers() {
         let topMargin: CGFloat = 7.0
-            
+        
         self.viewControllers = Tab.allCases.map { tab in
-            let rootVC = tab.viewController
-            let nav = UINavigationController(rootViewController: rootVC)
-            nav.isNavigationBarHidden = true
+            let nav = factory.makeViewController(for: tab)
             
             let icon = resizeImage(image: tab.imageName).withRenderingMode(.alwaysOriginal)
             let selectedIcon = resizeImage(image: tab.selectedImageName).withRenderingMode(.alwaysOriginal)
             
-            nav.tabBarItem = UITabBarItem(title: nil,
-                                          image: icon,
-                                          selectedImage: selectedIcon)
+            nav.tabBarItem = UITabBarItem(title: nil, image: icon, selectedImage: selectedIcon)
             nav.tabBarItem.tag = tab.rawValue
-            nav.tabBarItem.imageInsets = UIEdgeInsets(top: topMargin, left: 0,
-                                                      bottom: -topMargin, right: 0)
+            nav.tabBarItem.imageInsets = UIEdgeInsets(top: topMargin, left: 0, bottom: -topMargin, right: 0)
             
             return nav
         }
@@ -94,7 +104,6 @@ final class TabBarController: UITabBarController {
         tabBar.standardAppearance = appearance
         tabBar.scrollEdgeAppearance = appearance
     }
-    
     
     private func resizeImage(image: UIImage) -> UIImage {
         let targetSize = CGSize(width: 48, height: 48)
@@ -117,4 +126,18 @@ final class TabBarController: UITabBarController {
 
 extension TabBarController: UITabBarControllerDelegate {
     
+}
+
+protocol TabBarSceneFactory {
+    func makeViewController(for tab: TabBarController.Tab) -> UIViewController
+}
+
+final class DefaultTabBarSceneFactory: TabBarSceneFactory {
+    func makeViewController(for tab: TabBarController.Tab) -> UIViewController {
+        switch tab {
+        case .jinjae:   return JinJaeViewController()
+        case .junbeom:  return CombineViewController_HJB()
+        case .seungjun: return ViewController_LSJ()
+        }
+    }
 }
