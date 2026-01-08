@@ -31,26 +31,14 @@ class JinJaeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = homeView
-        setupActions()
+        setupButtonAction()
         bind()
     }
 
-    // MARK: - Setup Actions
+    // MARK: - Setup Button Action
 
-    private func setupActions() {
-        homeView.textField.addTarget(self, action: #selector(textField1DidChange), for: .editingChanged)
-        homeView.textField2.addTarget(self, action: #selector(textField2DidChange), for: .editingChanged)
+    private func setupButtonAction() {
         homeView.submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
-    }
-
-    @objc private func textField1DidChange() {
-        let text = homeView.textField.text ?? ""
-        input.send(.textFieldChanged(text))
-    }
-
-    @objc private func textField2DidChange() {
-        let text = homeView.textField2.text ?? ""
-        input.send(.textField2Changed(text))
     }
 
     @objc private func submitButtonTapped() {
@@ -60,6 +48,16 @@ class JinJaeViewController: UIViewController {
     // MARK: - Bind
 
     private func bind() {
+        homeView.textField.textDidChangePublisher()
+            .map { HomeViewModel.Input.textFieldChanged($0) }
+            .subscribe(input)
+            .store(in: &cancellables)
+
+        homeView.textField2.textDidChangePublisher()
+            .map { HomeViewModel.Input.textField2Changed($0) }
+            .subscribe(input)
+            .store(in: &cancellables)
+
         let output = viewModel.transform(input: input.eraseToAnyPublisher())
 
         output
@@ -78,7 +76,7 @@ class JinJaeViewController: UIViewController {
                     self.homeView.textField2.text = ""
                 }
             }
-        .store(in: &cancellables)
+            .store(in: &cancellables)
     }
 
 }

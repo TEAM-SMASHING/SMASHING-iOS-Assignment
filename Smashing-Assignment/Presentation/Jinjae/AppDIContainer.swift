@@ -10,7 +10,7 @@ import UIKit
 class AppDIContainer {
     static var shared: AppDIContainer = AppDIContainer()
     
-    func makeMainViewController() -> UIViewController {
+    func makeJInJaeViewController() -> UIViewController {
         let viewModel = HomeViewModel()
         return JinJaeViewController(viewModel: viewModel)
     }

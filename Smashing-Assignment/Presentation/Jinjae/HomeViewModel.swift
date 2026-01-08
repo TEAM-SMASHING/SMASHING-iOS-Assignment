@@ -58,9 +58,7 @@ final class HomeViewModel: InputOutputProtocol {
         }.store(in: &cancellables)
 
         Publishers.CombineLatest(text1Subject, text2Subject)
-            .map { text1, text2 in
-                return text1.count >= 5 && text2.count >= 5
-            }
+            .map { $0.count >= 5 && $1.count >= 5 }
             .removeDuplicates()
             .sink { [weak self] isValid in
                 guard let self = self else { return }

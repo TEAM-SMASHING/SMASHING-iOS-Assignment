@@ -41,7 +41,7 @@ final class TabBarController: UITabBarController {
         var viewController: UIViewController {
             switch self {
             case .jinjae:
-              return AppDIContainer.shared.makeMainViewController()
+              return AppDIContainer.shared.makeJInJaeViewController()
             case .junbeom:
                 return UIViewController()
             case .seungjun:
@@ -55,7 +55,7 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TabBarController.shared = self // 인스턴스 할당 필수!
+        TabBarController.shared = self
         self.delegate = self
         
         setViewControllers()
@@ -65,9 +65,8 @@ final class TabBarController: UITabBarController {
     
     // MARK: - Public Methods
     
-    func switchToTab(_ tab: Tab) { // 외부에서 호출할 탭 전환 메서드
+    func switchToTab(_ tab: Tab) {
         self.selectedIndex = tab.rawValue
-        // 필요한 경우 해당 탭의 내비게이션 스택을 루트로 초기화
         if let nav = self.selectedViewController as? UINavigationController {
             nav.popToRootViewController(animated: true)
         }
@@ -135,7 +134,7 @@ protocol TabBarSceneFactory {
 final class DefaultTabBarSceneFactory: TabBarSceneFactory {
     func makeViewController(for tab: TabBarController.Tab) -> UIViewController {
         switch tab {
-        case .jinjae:   return JinJaeViewController()
+        case .jinjae: return AppDIContainer.shared.makeJInJaeViewController()
         case .junbeom:  return CombineViewController_HJB()
         case .seungjun: return ViewController_LSJ()
         }
