@@ -22,14 +22,15 @@ final class SearchView: UIView {
         $0.layer.borderColor = UIColor.white.cgColor
         $0.font = .systemFont(ofSize: 20, weight: .bold)
     }
-
+    
     let collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collection.register(SearchMovieCollectionViewCell.self,
-                            forCellWithReuseIdentifier: SearchMovieCollectionViewCell.identifier)
+        collection.register(SearchPeopleCollectionViewCell.self,
+                            forCellWithReuseIdentifier: SearchPeopleCollectionViewCell.identifier)
+        
         return collection
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(searchBar)
@@ -46,7 +47,7 @@ final class SearchView: UIView {
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
