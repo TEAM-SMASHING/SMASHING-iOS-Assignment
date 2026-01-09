@@ -125,7 +125,10 @@ final class DefaultTabBarSceneFactory: TabBarSceneFactory {
     func makeViewController(for tab: TabBarController.Tab) -> UIViewController {
         switch tab {
         case .jinjae:   return JinJaeViewController()
-        case .junbeom:  return CombineViewController_HJB()
+//        case .junbeom:  return CombineViewController_HJB()
+        case .junbeom:
+            let viewModel = SearchPeopleViewModel()
+            return SearchPeopleViewController(viewModel: viewModel)
         case .seungjun: return ViewController_LSJ()
         }
     }

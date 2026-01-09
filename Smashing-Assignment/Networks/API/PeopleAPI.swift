@@ -9,11 +9,11 @@ import Foundation
 import Moya
 import Alamofire
 
-enum PersonAPI {
-    case fetchPeople(page: Int)
+enum PeopleAPI {
+    case fetchPeople(name: String, page: Int)
 }
 
-extension PersonAPI: BaseTargetType {
+extension PeopleAPI: BaseTargetType {
     
     var path: String {
         switch self {
@@ -28,9 +28,10 @@ extension PersonAPI: BaseTargetType {
     
     var task: Task {
         switch self {
-        case .fetchPeople(let page):
+        case .fetchPeople(let name, let page):
             return .requestParameters(
                 parameters: ["key": Environment.movie_API_Key,
+                             "peopleNm": name,
                              "curPage": page,
                              "itemPerPage": 10],
                 encoding: URLEncoding.default)
