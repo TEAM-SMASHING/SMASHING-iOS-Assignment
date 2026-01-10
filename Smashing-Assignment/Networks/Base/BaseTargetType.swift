@@ -13,7 +13,7 @@ protocol BaseTargetType: TargetType { }
 extension BaseTargetType{
 
     var baseURL: URL {
-        return URL(string:Environment.baseURL)!
+        return URL(string: Environment.baseURL)!
     }
 
     var headers: [String : String]? {

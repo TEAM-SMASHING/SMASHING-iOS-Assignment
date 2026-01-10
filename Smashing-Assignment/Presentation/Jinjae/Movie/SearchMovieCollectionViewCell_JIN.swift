@@ -46,19 +46,10 @@ final class SearchMovieCollectionViewCell_JIN: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(data: MovieDTO, index: Int) {
-        switch (index / 10 ) % 3 {
-        case 0:
-            movieNmLabel.textColor = .systemPink
-        case 1:
-            movieNmLabel.textColor = .systemCyan
-        case 2:
-            movieNmLabel.textColor = .systemGreen
-        default:
-            movieNmLabel.textColor = .white
-        }
-        movieNmLabel.text = String(index + 1) + ": " + data.movieNm
-        yearLabel.text = data.prdtYear
+    func configure(with movie: MovieDTO) {
+        movieNmLabel.text = movie.movieNm
+        yearLabel.text = movie.prdtYear
+        movieNmLabel.textColor = .label
     }
     
 }

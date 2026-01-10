@@ -134,7 +134,7 @@ protocol TabBarSceneFactory {
 final class DefaultTabBarSceneFactory: TabBarSceneFactory {
     func makeViewController(for tab: TabBarController.Tab) -> UIViewController {
         switch tab {
-        case .jinjae: return AppDIContainer.shared.makeJInJaeViewController()
+        case .jinjae: return AppDIContainer.shared.makeSearchViewController()
         case .junbeom:  return CombineViewController_HJB()
         case .seungjun: return ViewController_LSJ()
         }
